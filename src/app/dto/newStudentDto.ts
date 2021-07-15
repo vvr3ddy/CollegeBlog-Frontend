@@ -1,4 +1,4 @@
-export interface newStudentDto {
+export class newStudentDto {
   collegeCode: String;
   firstName: String;
   lastName: String;

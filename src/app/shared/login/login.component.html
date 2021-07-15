@@ -2,39 +2,43 @@
     <div class="columns">
         <div class="column is-4"></div>
         <div class="column is-4">
-            <div class="box has-background-danger-light">
-                <div class="field mb-3">
-                    <label class="label has-text-info">Username<span class="has-text-danger">*</span></label>
-                    
-                    <input class="input is-hovered" type="text" name="Username" placeholder="username" id="uName"
-                        required>
-                </div>
-                <div class="field mb-3">
-                    <label class="label has-text-info">Password<span class="has-text-danger">*</span></label>
-                    <input class="input is-hovered" type="password" name="Password" placeholder="password" id="password"
-                        required>
-                </div>
-                <div class="field mb-3">
-                    <label class="label has-text-info">Login as<span class="has-text-danger">*</span></label>
-                    <div class="select">
-                        <select name="LoginRole" id="loginRole">
-                            <option value="#" disabled selected hidden>Select Role</option>
-                            <option value="1">College</option>
-                            <option value="2">Faculty</option>
-                            <option value="3">Student</option>
-                        </select>
+            <form [formGroup]="loginForm">
+                <div class="box has-background-danger-light">
+                    <div class="field mb-3">
+                        <label class="label has-text-info">Username<span class="has-text-danger">*</span></label>
+
+                        <input class="input is-hovered" type="text" name="Username" placeholder="username" id="uName"
+                            required formControlName="username">
+                    </div>
+                    <div class="field mb-3">
+                        <label class="label has-text-info">Password<span class="has-text-danger">*</span></label>
+                        <input class="input is-hovered" type="password" name="Password" placeholder="password"
+                            id="password" required formControlName="password">
+                    </div>
+                    <div class="field mb-3">
+                        <label class="label has-text-info">Login as<span class="has-text-danger">*</span></label>
+                        <div class="select">
+                            <select name="LoginRole" id="loginRole" required formControlName="role">
+                                <option value="#" disabled selected hidden>Select Role</option>
+                                <option value="1">College</option>
+                                <option value="2">Faculty</option>
+                                <option value="3">Student</option>
+                            </select>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="field mb-3">
+                        <div class="columns is-tablet has-text-centered">
+                            <div class="column is-3"></div>
+                            <div class="column is-3"><input class="button is-success" type="button" value="Submit"
+                                    (click)="onSubmit()">
+                            </div>
+                            <div class="column is-3"><input class="button is-warning" type="reset" value="Reset"></div>
+                            <div class="column is-3"></div>
+                        </div>
                     </div>
                 </div>
-                <hr>
-                <div class="field mb-3">
-                    <div class="columns">
-                        <div class="column is-3"></div>
-                        <div class="column is-3"><input class="button is-success" type="button" value="Submit"></div>
-                        <div class="column is-3"><input class="button is-warning" type="reset" value="Reset"></div>
-                        <div class="column is-3"></div>
-                    </div>
-                </div>
-            </div>
+            </form>
             <div class="column is-4"></div>
         </div>
         <hr>

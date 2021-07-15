@@ -6,7 +6,7 @@ import { newCollegeDto } from '../dto/newCollegeDto';
 @Injectable({
   providedIn: 'root'
 })
-export class CollegeServiceService {
+export class CollegeService {
   baseurl: String = "https://collegeblog-backend.herokuapp.com/college";
   constructor(private http: HttpClient) { }
 
@@ -29,7 +29,7 @@ export class CollegeServiceService {
   public findByUserName(userName: String): Observable<any> {
     console.log("Find College By UserName Method.");
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
-    return this.http.get(`${this.baseurl}/userName/${userName}`, { headers, responseType: 'json' });
+    return this.http.get(`${this.baseurl}/get/userName/${userName}`, { headers, responseType: 'json' });
   }
 
   /**

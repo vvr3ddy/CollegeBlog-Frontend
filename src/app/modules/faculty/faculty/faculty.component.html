@@ -1,1 +1,28 @@
-<p>faculty works!</p>
+<div class="container is-fluid">
+    <div class="columns is-tablet">
+        <div class="column"></div>
+        <div class="column is-4 has-text-centered">
+            <div class="card">
+                <h4 class="is-size-4">Manage Posts</h4>
+                <div class="card-content">
+                    <p class="is-size-6"> Manage Posts by various Students</p>
+                    <button class="button is-warning" (click)="managePosts()">Manage</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="column is-4 has-text-centered">
+            <div class="card">
+                <h4 class="is-size-4">Manage Students</h4>
+                <div class="card-content">
+                    <p class="is-size-6">Manage your Students</p>
+                    <button class="button is-link" (click)="manageStudents()">Manage</button>
+                </div>
+            </div>
+        </div>
+        <div class="column"></div>
+    </div>
+    <div class="has-text-centered">
+        <button class="button is-danger" (click)="logOut()">Log Out</button>
+    </div>
+</div>

@@ -6,7 +6,7 @@ import { newFacultyDto } from '../dto/newFacultyDto';
 @Injectable({
   providedIn: 'root'
 })
-export class FacultyServiceService {
+export class FacultyService {
   baseUrl: String = 'https://collegeblog-backend.herokuapp.com/faculty';
   constructor(private http: HttpClient) { }
 

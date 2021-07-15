@@ -1,3 +1,27 @@
-<div class="container">
-    <p>Hi</p>
+<div class="container is-fluid">
+    <div class="columns is-table">
+        <div class="column"></div>
+        <div class="column is-5">
+            <div class="card has-text-centered">
+
+                <h4 class="is-size-4 mt-3">New Posts</h4>
+                <div class="card-content">
+                    <button class="button is-warning" (click)="newPost()">Create New Post</button>
+                </div>
+            </div>
+        </div>
+        <div class="column is-5">
+            <div class="card has-text-centered">
+
+                <h4 class="is-size-4 mt-3">Existing Posts</h4>
+                <div class="card-content">
+                    <button class="button is-link" (click)="managePosts()">Manage Existing Posts</button>
+                </div>
+            </div>
+        </div>
+        <div class="column"></div>
+    </div>
+    <div class="has-text-centered">
+        <button class="button is-danger" (click)="logOut()">Log Out</button>
+    </div>
 </div>

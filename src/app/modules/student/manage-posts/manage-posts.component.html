@@ -1,0 +1,29 @@
+<div class="container is-fluid">
+    <div class="columns is-tablet">
+        <div class="column"></div>
+        <div class="column is-half has-text-justified">
+            <h4 class="is-size-4">Posts by {{studentUSN}}</h4>
+            <div class="table-container">
+                <table class="table is-striped is-hoverable has-text-centered">
+                    <thead>
+                        <th>Post ID</th>
+                        <th>Post Title</th>
+                        <th colspan="2">Actions</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let post of postList">
+                            <td>{{post.postId}}</td>
+                            <td>{{post.postTitle}}</td>
+                            <td colspan="2">
+                                <button class="button is-warning mr-3" (click)="updatePost(post.postId)">Update
+                                    Post</button>
+                                <button class="button is-danger" (click)="deletePost(post.postId)">Delete Post</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="column"></div>
+    </div>
+</div>

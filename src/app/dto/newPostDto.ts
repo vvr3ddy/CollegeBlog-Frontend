@@ -1,4 +1,4 @@
-export interface newPostDto {
+export class newPostDto {
   createdBy: String;
   isApproved: Boolean;
   postDescription: String;

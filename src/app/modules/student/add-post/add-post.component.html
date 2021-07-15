@@ -1,1 +1,38 @@
-<p>add-post works!</p>
+<div class="container is-fluid">
+    <div class="columns is-tablet">
+        <div class="column"></div>
+        <div class="column is-half">
+            <div class="card">
+                <h4 class="is-size-4 has-text-centered">Create new Post</h4>
+                <div class="card-content">
+                    <form [formGroup]="newPostForm">
+                        <div class="field">
+                            <label class="label">Post Title</label>
+                            <div class="control">
+                                <input class="input" type="text" required placeholder="Awesome Post Title"
+                                    formControlName="title">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Post Description</label>
+                            <div class="control">
+                                <textarea class="textarea" required placeholder="Awesome Post Description"
+                                    formControlName="description"></textarea>
+                                <p class="help is-danger"><b>Note:</b> The post will pass for approval by a moderator
+                                    before
+                                    going live.</p>
+                            </div>
+                        </div>
+                        <div class="field is-grouped">
+                            <div class="control">
+                                <button class="button is-warning mr-2" (click)="createPost()">Create Post</button>
+                                <button class="button is-danger" type="reset">Reset</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="column"></div>
+    </div>
+</div>

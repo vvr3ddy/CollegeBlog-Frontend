@@ -1,0 +1,22 @@
+<div class="container is-fluid">
+    <div class="columns is-tablet">
+        <div class="column"></div>
+        <div class="column is-8">
+            <div class="table-container">
+                <table class="table is-hoverable is-striped">
+                    <thead>
+                        <th>Student USN</th>
+                        <th>Student Name</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let student of studentList">
+                            <td>{{student.registrationNumber}}</td>
+                            <td>{{student.fullName}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="column"></div>
+    </div>
+</div>
