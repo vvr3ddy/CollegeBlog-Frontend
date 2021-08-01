@@ -1,1 +1,63 @@
-<p>college works!</p>
+<div class="container is-fluid">
+    <div class="columns">
+        <div class="column"></div>
+        <div class="column is-9">
+            <div>
+                <h1 class="title">College Dashboard</h1>
+                <p class="subtitle">Manage Students, Faculty and Blog Posts</p>
+            </div>
+        </div>
+        <div class="column"></div>
+    </div>
+    <div class="columns has-text-centered">
+        <div class="column is-4">
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-title">
+                        <h3>Student Dashboard</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>
+                            <button class="button is-warning" (click)="manageStudents()">Manage Students</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column is-4">
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-title">
+                        <h3>Faculty Dashboard</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>
+                            <button class="button is-link" (click)="manageFaculty()">Manage Faculty</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column is-4">
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-title">
+                        <h3>Blog Dashboard</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>
+                            <button class="button is-primary" (click)="manageBlogs()">Manage Blogs</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="columns has-text-centered">
+        <div class="column is-5"></div>
+        <div class="column is-2">
+            <button class="button is-danger" (click)="logout()">Log Out</button>
+        </div>
+        <div class="column is-5"></div>
+    </div>
+</div>

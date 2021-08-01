@@ -37,7 +37,10 @@ export class LoginComponent implements OnInit {
           if (data.password === password) {
             localStorage.setItem('collegeId', data.userName);
             localStorage.setItem('collegeCode', data.collegeCode);
-            this.router.navigate(['college']);
+            localStorage.setItem('isloggedIn', 'true');
+            this.router.navigate(['college']).then(() => {
+              window.location.reload();
+            });
           } else {
             alert('Password Incorrect!');
           }
@@ -53,7 +56,10 @@ export class LoginComponent implements OnInit {
             localStorage.setItem('facultyID', data.userName);
             localStorage.setItem('facultyCode', data.facultyCode);
             localStorage.setItem('collegeCode', data.collegeCode);
-            this.router.navigate(['faculty']);
+            localStorage.setItem('isloggedIn', 'true');
+            this.router.navigate(['faculty']).then(() => {
+              window.location.reload();
+            });
           } else {
             alert('Password Incorrect!');
           }
@@ -69,7 +75,10 @@ export class LoginComponent implements OnInit {
             localStorage.setItem('studentID', data.userName);
             localStorage.setItem('studentUSN', data.registrationNumber);
             localStorage.setItem('collegeCode', data.collegeCode);
-            this.router.navigate(['student']);
+            localStorage.setItem('isloggedIn', 'true');
+            this.router.navigate(['student']).then(() => {
+              window.location.reload();
+            });
           } else {
             alert('Password Incorrect!');
           }

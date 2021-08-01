@@ -105,10 +105,14 @@ export class BlogpostService {
       'Content-Type',
       'application/json; charset=utf-8'
     );
-    return this.http.put(`${this.baseUrl}/flagPost/${postId}`, facultyCode, {
-      headers,
-      responseType: 'text',
-    });
+    return this.http.put(
+      `${this.baseUrl}/flagPost/${postId}?facultyCode=${facultyCode}`,
+      postId,
+      {
+        headers,
+        responseType: 'text',
+      }
+    );
   }
 
   /**

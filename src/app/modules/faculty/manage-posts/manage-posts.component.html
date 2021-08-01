@@ -1,20 +1,22 @@
 <div class="container is-fluid">
     <div class="columns is-tablet">
         <div class="column"></div>
-        <div class="column is-half has-text-centered">
+        <div class="column is-half is-align-content-center">
             <div class="table-container has-text-centered">
                 <table class="table is-striped is-hoverable">
                     <thead>
-                        <th>Post Id</th>
+                        <th>Unique Post Id</th>
                         <th>Post Title</th>
+                        <th>Flag Count</th>
                         <th>Actions</th>
                     </thead>
                     <tbody>
                         <tr *ngFor="let post of postList">
                             <td>{{post.postId}}</td>
                             <td>{{post.postTitle}}</td>
+                            <td>{{post.flaggedCount}}</td>
                             <td>
-                                <button class="button is-warning">Flag Post</button>
+                                <button class="button is-warning" (click)="flagPost(post.postId)">Flag Post</button>
                             </td>
                         </tr>
                     </tbody>
@@ -22,5 +24,12 @@
             </div>
         </div>
         <div class="column"></div>
+    </div>
+    <div class="columns">
+        <div class="column is-5"></div>
+        <div class="column is-2">
+            <button class="button is-danger" (click)="goBack()">Go Back</button>
+        </div>
+        <div class="column is-5"></div>
     </div>
 </div>

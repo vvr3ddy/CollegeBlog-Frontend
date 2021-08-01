@@ -1,1 +1,30 @@
-<p>home works!</p>
+<div class="container is-fluid">
+    <div class="columns">
+        <div class="column is-2"></div>
+        <div class="column is-8 has-text-centered">
+            <p class="title">Let's Blog</p>
+            <p>Login to create your awesome posts!!!</p>
+        </div>
+        <div class="column is-2"></div>
+    </div>
+    <div class="columns">
+        <div class="column is-2"></div>
+        <div class="column is-8">
+            <div class="my-5" *ngFor="let post of postList">
+                <div class="card">
+                    <header class="card-header">
+                        <p class="card-header-title">{{post.postTitle}}</p>
+                    </header>
+                    <div class="card-content">
+                        {{post.postDescription}}
+                    </div>
+                    <footer class="card-footer">
+                        <p class="card-footer-item"><b>Post By: </b> {{post.authorName}}</p>
+                    </footer>
+                </div>
+            </div>
+        </div>
+        <div class="column is-2"></div>
+    </div>
+
+</div>

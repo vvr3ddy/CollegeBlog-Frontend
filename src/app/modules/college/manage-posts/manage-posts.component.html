@@ -1,0 +1,59 @@
+<div class="container is-fluid">
+    <div class="columns">
+        <div class="column is-2"></div>
+        <div class="column is-8" *ngIf="userSpecific; else general">
+            <h1 class="title">Manage Posts by {{username}}</h1>
+            <div class="table-container has-text-centered">
+                <table class="table is-hoverable is-striped">
+                    <thead>
+                        <th>Post ID</th>
+                        <th>Post Title</th>
+                        <th>Flag Count</th>
+                        <th colspan="2">Actions</th>
+                    </thead>
+                    <tbody *ngFor="let post of postList">
+                        <td>{{post.postId}}</td>
+                        <td>{{post.postTitle}}</td>
+                        <td>{{post.flaggedCount}}</td>
+                        <td>
+                            <button class="button is-danger">Delete</button>
+                        </td>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <ng-template #general>
+            <div class="column is-8">
+                <h1 class="title">Manage All Posts</h1>
+                <div class="table-container has-text-centered">
+                    <table class="table is-hoverable is-striped">
+                        <thead>
+                            <th>Post ID</th>
+                            <th>Post Title</th>
+                            <th>Post Author</th>
+                            <th>Flag Count</th>
+                            <th colspan="2">Actions</th>
+                        </thead>
+                        <tbody *ngFor="let post of postList">
+                            <td>{{post.postId}}</td>
+                            <td>{{post.postTitle}}</td>
+                            <td>{{post.authorId}}</td>
+                            <td>{{post.flaggedCount}}</td>
+                            <td>
+                                <button class="button is-danger">Delete</button>
+                            </td>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </ng-template>
+        <div class="column is-2"></div>
+    </div>
+    <div class="columns">
+        <div class="column is-5"></div>
+        <div class="column is-2" (click)="goBack()">
+            <button class="button is-danger">Go Back</button>
+        </div>
+        <div class="column is-5"></div>
+    </div>
+</div>

@@ -21,7 +21,8 @@ export class ManagePostsComponent implements OnInit {
   ngOnInit(): void {
     this.blogService.findAllPosts().subscribe(
       (data) => {
-        data = this.postList;
+        this.postList = data;
+        console.log(this.postList);
       },
       (err) => {
         alert(err.error);
@@ -37,5 +38,9 @@ export class ManagePostsComponent implements OnInit {
         alert(err.error);
       }
     );
+  }
+
+  goBack() {
+    this.router.navigate(['/faculty']);
   }
 }

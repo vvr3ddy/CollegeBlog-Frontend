@@ -1,0 +1,30 @@
+<div class="container is-fluid">
+    <div class="columns">
+        <div class="column is-4"></div>
+        <div class="column is-8">
+            <h1 class="title">Manage Faculty</h1>
+            <div class="table-container has-text-centered">
+                <table class="table is-striped is-hoverable">
+                    <thead>
+                        <th>Faculty Id</th>
+                        <th>Faculty Name</th>
+                        <th>Actions</th>
+                    </thead>
+                    <tbody *ngFor="let faculty of facultyList">
+                        <td>{{faculty.facultyCode}}</td>
+                        <td>{{faculty.fullName}}</td>
+                        <td>
+                            <button class="button is-danger" (click)="delete()">Delete</button>
+                        </td>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="column is-4"></div>
+    </div>
+    <div class="columns">
+        <div class="column is-5"></div>
+        <div class="column is-2"><button class="button is-danger" (click)="goBack()">Go back</button></div>
+        <div class="column is-5"></div>
+    </div>
+</div>
