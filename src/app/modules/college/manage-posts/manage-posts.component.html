@@ -16,7 +16,7 @@
                         <td>{{post.postTitle}}</td>
                         <td>{{post.flaggedCount}}</td>
                         <td>
-                            <button class="button is-danger">Delete</button>
+                            <button class="button is-danger" (click)="deletePost(post.postId)">Delete</button>
                         </td>
                     </tbody>
                 </table>
@@ -40,7 +40,7 @@
                             <td>{{post.authorId}}</td>
                             <td>{{post.flaggedCount}}</td>
                             <td>
-                                <button class="button is-danger">Delete</button>
+                                <button class="button is-danger" (click)="deletePost(post.postId)">Delete</button>
                             </td>
                         </tbody>
                     </table>

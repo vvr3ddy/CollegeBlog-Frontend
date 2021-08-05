@@ -12,16 +12,30 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let post of postList">
-                            <td>{{post.postId}}</td>
-                            <td>{{post.postTitle}}</td>
-                            <td colspan="2">
-                                <button class="button is-warning mr-3" (click)="updatePost(post.postId)">Update
-                                    Post</button>
-                                <button class="button is-danger" (click)="deletePost(post.postId)">Delete Post</button>
-                            </td>
+                            <ng-template *ngIf="post.flaggedCount<3; else flaggedPost">
+                                <td>{{post.postId}}</td>
+                                <td>{{post.postTitle}}</td>
+                                <td colspan="2">
+                                    <button class="button is-warning mr-3" (click)="updatePost(post.postId)">Update
+                                        Post</button>
+                                    <button class="button is-danger" (click)="deletePost(post.postId)">Delete
+                                        Post</button>
+                                </td>
+                            </ng-template>
+                            <ng-template #flaggedPost>
+                                <td style="color: red;">{{post.postId}}</td>
+                                <td style="color: red;">{{post.postTitle}}</td>
+                                <td colspan="2">
+                                    <button class="button is-warning mr-3" (click)="updatePost(post.postId)">Update
+                                        Post</button>
+                                    <button class="button is-danger" (click)="deletePost(post.postId)">Delete
+                                        Post</button>
+                                </td>
+                            </ng-template>
                         </tr>
                     </tbody>
                 </table>
+                <p style="color: red;">* Red Indicates a post flagged more than 3 times</p>
             </div>
         </div>
         <div class="column"></div>

@@ -49,6 +49,7 @@ export class ManagePostsComponent implements OnInit {
     this.blogService.deletePost(postId).subscribe(
       (data) => {
         alert(data);
+        window.location.reload();
       },
       (err) => {
         alert(err.error);

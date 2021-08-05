@@ -7,4 +7,5 @@ export class ListPostDto {
   createdTime: String;
   updatedTime: String;
   flagCount: Number;
+  isApproved: Boolean;
 }

@@ -33,6 +33,7 @@ export class ManagePostsComponent implements OnInit {
     this.blogService.flagPostById(postId, this.facultyCode).subscribe(
       (data) => {
         alert(data);
+        window.location.reload();
       },
       (err) => {
         alert(err.error);
