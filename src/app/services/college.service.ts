@@ -18,7 +18,7 @@ export class CollegeService {
   public deleteCollege(collegeCode: String): Observable<any> {
     console.log("Delete College Method.");
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
-    return this.http.delete(`${this.baseurl}/delete/${collegeCode}`, { headers, responseType: 'json' });
+    return this.http.delete(`${this.baseurl}/delete/${collegeCode}`, { headers, responseType: 'text' });
   }
 
   /**
@@ -50,7 +50,7 @@ export class CollegeService {
   public newCollege(newCollege: newCollegeDto): Observable<any> {
     console.log("Create new College Method.");
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
-    return this.http.post(`${this.baseurl}/add`, newCollege, { headers, responseType: 'json' });
+    return this.http.post(`${this.baseurl}/add`, newCollege, { headers, responseType: 'text' });
   }
 
   /**
@@ -61,6 +61,6 @@ export class CollegeService {
   public updateCollege(collegeCode: String, college: newCollegeDto): Observable<any> {
     console.log("Update College Method");
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
-    return this.http.put(`${this.baseurl}/update/${collegeCode}`, college, { headers, responseType: 'json' });
+    return this.http.put(`${this.baseurl}/update/${collegeCode}`, college, { headers, responseType: 'text' });
   }
 }

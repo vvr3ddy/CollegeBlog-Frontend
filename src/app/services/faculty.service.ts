@@ -72,7 +72,7 @@ export class FacultyService {
   public createNewFaculty(newFaculty: newFacultyDto): Observable<any> {
     console.log("Create New Faculty Method.");
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
-    return this.http.post(`${this.baseUrl}/add`, newFaculty, { headers, responseType: 'json' });
+    return this.http.post(`${this.baseUrl}/add`, newFaculty, { headers, responseType: 'text' });
   }
   /**
    * 
@@ -83,7 +83,7 @@ export class FacultyService {
   public updateFaculty(facultyCode: String, faculty: newFacultyDto): Observable<any> {
     console.log("Update Faculty Method.");
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
-    return this.http.put(`${this.baseUrl}/update/${facultyCode}`, faculty, { headers, responseType: 'json' });
+    return this.http.put(`${this.baseUrl}/update/${facultyCode}`, faculty, { headers, responseType: 'text' });
   }
 
 }

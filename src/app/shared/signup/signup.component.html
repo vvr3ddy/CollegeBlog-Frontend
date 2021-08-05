@@ -3,33 +3,36 @@
     <div class="columns is-mobile is-3">
         <div class="column is-3"></div>
         <div class="column is-6">
-            <form class="box has-background-info-light">
+            <form class="box has-background-info-light" [formGroup]="signUpForm">
                 <div class="field">
-                    <label class="label has-text-info">First Name</label>
-                    <input class="input is-hovered" type="text" name="FirstName" placeholder="John" id="fName">
+                    <label class="label has-text-info">First Name<span style="color: red">*</span></label>
+                    <input class="input is-hovered" type="text" name="FirstName" required placeholder="Enter your First Name / College Name" id="fName" formControlName="fName">
                 </div>
                 <div class="field">
                     <label class="label has-text-info">Last Name</label>
-                    <input class="input is-hovered" type="text" name="LastName" placeholder="Doe" id="lName">
+                    <input class="input is-hovered" type="text" name="LastName" required placeholder="Optional for Colleges" id="lName" formControlName="lName">
                 </div>
                 <div class="field">
-                    <label class="label has-text-info">Email Address</label>
-                    <input class="input is-hovered" type="email" name="Email" placeholder="john.doe@example.com"
-                        id="email">
+                    <label class="label has-text-info">College Code<span style="color: red">*</span></label>
+                    <input class="input is-hovered" type="text" name="CollegeCode" required placeholder="1AB" id="clgCode" formControlName="clgCode">
                 </div>
                 <div class="field">
-                    <label class="label has-text-info">Username</label>
-                    <input class="input is-hovered" type="text" name="Username" placeholder="johnD0e11" id="uName">
+                    <label class="label has-text-info">USN | Faculty Code</label>
+                    <input class="input is-hovered" type="text" name="USN" required placeholder="Only for Students / Faculty" id="usn" formControlName="usn">
                 </div>
                 <div class="field">
-                    <label class="label has-text-info">Enter Password</label>
+                    <label class="label has-text-info">Username<span style="color: red">*</span></label>
+                    <input class="input is-hovered" type="text" name="Username" required placeholder="johnD0e11" id="uName" formControlName="uName">
+                </div>
+                <div class="field">
+                    <label class="label has-text-info">Enter Password<span style="color: red">*</span></label>
                     <input class="input is-hovered" type="password" name="Password"
-                        placeholder="This1s4V3ryStrongPa55word" id="pwrd">
+                        required placeholder="This1s4V3ryStrongPa55word" id="pwrd" formControlName="password">
                 </div>
                 <div class="field">
-                    <label class="label has-text-info">Choose Role</label>
+                    <label class="label has-text-info">Choose Role<span style="color: red">*</span></label>
                     <div class="select is-rounded">
-                        <select>
+                        <select required formControlName="role">
                             <option value="0" disabled selected hidden>Sign up as</option>
                             <option value="1">College</option>
                             <option value="2">Faculty</option>
@@ -41,7 +44,7 @@
                 <div class="columns">
                     <div class="column is-2"></div>
                     <div class="column is-4 has-text-centered">
-                        <button class="button is-primary has-text-weight-bold">Submit</button>
+                        <button class="button is-primary has-text-weight-bold" (click)="createUser()">Submit</button>
                     </div>
                     <div class="column is-4 has-text-centered">
                         <input class="button is-danger has-text-weight-bold" type="reset" value="Reset" />

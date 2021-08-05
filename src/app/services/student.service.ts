@@ -71,7 +71,7 @@ export class StudentService {
   public createNewStudent(newStudent: newStudentDto): Observable<any> {
     console.log("Create New Student Method.");
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
-    return this.http.post(`${this.baseUrl}/add`, newStudent, { headers, responseType: 'json' })
+    return this.http.post(`${this.baseUrl}/add`, newStudent, { headers, responseType: 'text' })
   }
 
   /**
@@ -83,7 +83,7 @@ export class StudentService {
   public updateStudent(studentUSN: String, student: newStudentDto): Observable<any> {
     console.log("Update Student Method.");
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
-    return this.http.put(`${this.baseUrl}/update/${studentUSN}`, student, { headers, responseType: 'json' });
+    return this.http.put(`${this.baseUrl}/update/${studentUSN}`, student, { headers, responseType: 'text' });
   }
 
 }
