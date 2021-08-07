@@ -16,7 +16,7 @@ export class ManagePostsComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private blogService: BlogpostService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.blogService.findAllPosts().subscribe(
@@ -39,6 +39,19 @@ export class ManagePostsComponent implements OnInit {
         alert(err.error);
       }
     );
+  }
+
+  approvePost(postId: Number) {
+    this.blogService.approvePost(postId)
+      .subscribe(
+        data => {
+          alert(data);
+          window.location.reload();
+        },
+        err => {
+          alert(err.error);
+        }
+      );
   }
 
   goBack() {

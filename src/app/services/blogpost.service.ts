@@ -23,7 +23,7 @@ export class BlogpostService {
     );
     return this.http.get(`${this.baseUrl}/approve/${postId}`, {
       headers,
-      responseType: 'json',
+      responseType: 'text',
     });
   }
 
