@@ -12,26 +12,17 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let post of postList">
-                            <ng-template *ngIf="post.isApproved; else isApproved">
-                                <td style="color: red;">{{post.postId}}</td>
-                                <td style="color: red;">{{post.postTitle}}</td>
-                                <td style="color: red;">{{post.flaggedCount}}</td>
-                                <td>
-                                    <button class="button is-warning" (click)="flagPost(post.postId)">Flag Post</button>
-                                    <button class="button is-info" (click)="approvePost(post.postId)">Approve Post</button>
-                                </td>
-                            </ng-template>
-                            <ng-template #isApproved>
-                                <td style="color: green;">{{post.postId}}</td>
-                                <td style="color: green;">{{post.postTitle}}</td>
-                                <td style="color: green;">{{post.flaggedCount}}</td>
+                        
+                                <td >{{post.postId}}</td>
+                                <td >{{post.postTitle}}</td>
+                                <td >{{post.flaggedCount}}</td>
                                 <td>
                                     <button class="button is-warning" (click)="flagPost(post.postId)">Flag Post</button>
                                 </td>
-                            </ng-template>
                         </tr>
                     </tbody>
                 </table>
+
             </div>
         </div>
         <div class="column"></div>
